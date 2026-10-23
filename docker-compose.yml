@@ -1,0 +1,23 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      DECIDER_URL: ${DECIDER_URL:-http://host.docker.internal:8099}
+      DECIDER_MODEL: ${DECIDER_MODEL:-StrandsAgents/strands-decider-2B-qwen3.5-v1-2610}
+      DECIDER_MODE: ${DECIDER_MODE:-live}
+      CONFIDENCE_THRESHOLD: ${CONFIDENCE_THRESHOLD:-0.60}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
+      EVENT_LOG_PATH: /app/data/events.jsonl
+      AWS_REGION: ${AWS_REGION:-us-east-1}
+      BEDROCK_MODEL_ID: ${BEDROCK_MODEL_ID:-amazon.nova-lite-v1:0}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID:-}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY:-}
+      AWS_SESSION_TOKEN: ${AWS_SESSION_TOKEN:-}
+    volumes:
+      - echostage-events:/app/data
+volumes:
+  echostage-events:

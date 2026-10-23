@@ -1,0 +1,17 @@
+{
+  "id": "suspense",
+  "name": "Suspense",
+  "description": "Slow-burn scene with protected climax.",
+  "initial_state": {
+    "scene_id": "suspense",
+    "scene_phase": "rising_tension",
+    "narrative_progress": 0.42,
+    "stage_intensity": 0.58,
+    "simulated_engagement": 0.64,
+    "pacing_pressure": 0.48,
+    "current_lighting": "deep_blue",
+    "last_action": "HOLD",
+    "seconds_since_last_transition": 30,
+    "transition_allowed": true
+  }
+}

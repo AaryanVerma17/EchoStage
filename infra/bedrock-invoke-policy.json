@@ -1,0 +1,13 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InvokeConfiguredBedrockModel",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModel"
+      ],
+      "Resource": "REPLACE_WITH_APPROVED_MODEL_ARN_OR_SUPPORTED_RESOURCE_SCOPE"
+    }
+  ]
+}
